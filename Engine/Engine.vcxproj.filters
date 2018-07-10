@@ -5,23 +5,110 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{8bd0dcaa-ee65-4b80-ae2d-e1c4edd03139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{2b6c93d5-6483-45c2-b37e-10f11d5cfcc4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="singleton.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="inputManager.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="audioSystem.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="math.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix22.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix33.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="vector3D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
     <ClInclude Include="engine.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="color.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="textureManager.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="textManager.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="text.h">
+      <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="math.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="matrix22.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="matrix33.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="vector2D.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="vector3D.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="audioSystem.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="inputManager.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="color.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="textureManager.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="textManager.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="text.cpp">
+      <Filter>Graphics</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
