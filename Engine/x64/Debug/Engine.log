@@ -1,55 +1,31 @@
-﻿  audioSystem.cpp
-  color.cpp
+﻿  color.cpp
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(3): warning C4273: 'red': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\color.h(41): note: see previous definition of 'public: static Color const Color::red'
+  c:\users\garrett\source\repos\ncgame\engine\color.h(53): note: see previous definition of 'public: static Color const Color::red'
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(3): error C2491: 'Color::red': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(4): warning C4273: 'green': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\color.h(42): note: see previous definition of 'public: static Color const Color::green'
+  c:\users\garrett\source\repos\ncgame\engine\color.h(54): note: see previous definition of 'public: static Color const Color::green'
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(4): error C2491: 'Color::green': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(5): warning C4273: 'blue': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\color.h(43): note: see previous definition of 'public: static Color const Color::blue'
+  c:\users\garrett\source\repos\ncgame\engine\color.h(55): note: see previous definition of 'public: static Color const Color::blue'
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(5): error C2491: 'Color::blue': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(6): warning C4273: 'white': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\color.h(44): note: see previous definition of 'public: static Color const Color::white'
+  c:\users\garrett\source\repos\ncgame\engine\color.h(56): note: see previous definition of 'public: static Color const Color::white'
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(6): error C2491: 'Color::white': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(7): warning C4273: 'orange': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\color.h(45): note: see previous definition of 'public: static Color const Color::orange'
+  c:\users\garrett\source\repos\ncgame\engine\color.h(57): note: see previous definition of 'public: static Color const Color::orange'
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(7): error C2491: 'Color::orange': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(8): warning C4273: 'yellow': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\color.h(46): note: see previous definition of 'public: static Color const Color::yellow'
+  c:\users\garrett\source\repos\ncgame\engine\color.h(58): note: see previous definition of 'public: static Color const Color::yellow'
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(8): error C2491: 'Color::yellow': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(9): warning C4273: 'magenta': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\color.h(47): note: see previous definition of 'public: static Color const Color::magenta'
+  c:\users\garrett\source\repos\ncgame\engine\color.h(59): note: see previous definition of 'public: static Color const Color::magenta'
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(9): error C2491: 'Color::magenta': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(10): warning C4273: 'cyan': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\color.h(48): note: see previous definition of 'public: static Color const Color::cyan'
+  c:\users\garrett\source\repos\ncgame\engine\color.h(60): note: see previous definition of 'public: static Color const Color::cyan'
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(10): error C2491: 'Color::cyan': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(11): warning C4273: 'black': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\color.h(49): note: see previous definition of 'public: static Color const Color::black'
+  c:\users\garrett\source\repos\ncgame\engine\color.h(61): note: see previous definition of 'public: static Color const Color::black'
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(11): error C2491: 'Color::black': definition of dllimport static data member not allowed
-  engine.cpp
-c:\users\garrett\source\repos\ncgame\engine\engine.cpp(15): warning C4273: 'Engine::Initialize': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\engine.h(21): note: see previous definition of 'Initialize'
-c:\users\garrett\source\repos\ncgame\engine\engine.cpp(29): warning C4273: 'Engine::Shutdown': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\engine.h(23): note: see previous definition of 'Shutdown'
-c:\users\garrett\source\repos\ncgame\engine\engine.cpp(41): warning C4273: 'Engine::Update': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\engine.h(22): note: see previous definition of 'Update'
-  inputManager.cpp
-  math.cpp
-c:\users\garrett\source\repos\ncgame\engine\math.cpp(8): warning C4273: 'Math::Clamp': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\math.h(18): note: see previous definition of 'Clamp'
-c:\users\garrett\source\repos\ncgame\engine\math.cpp(13): warning C4273: 'Math::Clamp01': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\math.h(19): note: see previous definition of 'Clamp01'
-c:\users\garrett\source\repos\ncgame\engine\math.cpp(18): warning C4273: 'Math::GetRandom01': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\math.h(20): note: see previous definition of 'GetRandom01'
-c:\users\garrett\source\repos\ncgame\engine\math.cpp(23): warning C4273: 'Math::GetRandomRange': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\math.h(21): note: see previous definition of 'GetRandomRange'
-c:\users\garrett\source\repos\ncgame\engine\math.cpp(28): warning C4273: 'Math::Lerp': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\math.h(22): note: see previous definition of 'Lerp'
-c:\users\garrett\source\repos\ncgame\engine\math.cpp(34): warning C4273: 'Math::LerpUnclamped': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\math.h(23): note: see previous definition of 'LerpUnclamped'
-c:\users\garrett\source\repos\ncgame\engine\math.cpp(39): warning C4273: 'Math::IsZero': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\math.h(24): note: see previous definition of 'IsZero'
   matrix22.cpp
 c:\users\garrett\source\repos\ncgame\engine\matrix22.cpp(3): warning C4273: 'identity': inconsistent dll linkage
   c:\users\garrett\source\repos\ncgame\engine\matrix22.h(71): note: see previous definition of 'public: static Matrix22 const Matrix22::identity'
@@ -62,9 +38,6 @@ c:\users\garrett\source\repos\ncgame\engine\matrix33.cpp(3): warning C4273: 'ide
 c:\users\garrett\source\repos\ncgame\engine\matrix33.cpp(3): error C2491: 'Matrix33::identity': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\matrix33.cpp(6): warning C4273: 'Matrix33::Rotate': inconsistent dll linkage
   c:\users\garrett\source\repos\ncgame\engine\matrix33.h(42): note: see previous definition of 'Rotate'
-  renderer.cpp
-  textureManager.cpp
-  timer.cpp
   vector2D.cpp
 c:\users\garrett\source\repos\ncgame\engine\vector2d.cpp(7): warning C4273: 'zero': inconsistent dll linkage
   c:\users\garrett\source\repos\ncgame\engine\vector2d.h(53): note: see previous definition of 'public: static Vector2D const Vector2D::zero'
@@ -94,35 +67,35 @@ c:\users\garrett\source\repos\ncgame\engine\vector2d.cpp(58): warning C4273: 'Ve
   c:\users\garrett\source\repos\ncgame\engine\vector2d.h(64): note: see previous definition of 'Normalized'
   vector3D.cpp
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(6): warning C4273: 'zero': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(59): note: see previous definition of 'public: static Vector3D const Vector3D::zero'
+  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(62): note: see previous definition of 'public: static Vector3D const Vector3D::zero'
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(6): error C2491: 'Vector3D::zero': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(7): warning C4273: 'one': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(60): note: see previous definition of 'public: static Vector3D const Vector3D::one'
+  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(63): note: see previous definition of 'public: static Vector3D const Vector3D::one'
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(7): error C2491: 'Vector3D::one': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(8): warning C4273: 'up': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(61): note: see previous definition of 'public: static Vector3D const Vector3D::up'
+  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(64): note: see previous definition of 'public: static Vector3D const Vector3D::up'
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(8): error C2491: 'Vector3D::up': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(9): warning C4273: 'down': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(62): note: see previous definition of 'public: static Vector3D const Vector3D::down'
+  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(65): note: see previous definition of 'public: static Vector3D const Vector3D::down'
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(9): error C2491: 'Vector3D::down': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(10): warning C4273: 'left': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(63): note: see previous definition of 'public: static Vector3D const Vector3D::left'
+  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(66): note: see previous definition of 'public: static Vector3D const Vector3D::left'
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(10): error C2491: 'Vector3D::left': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(11): warning C4273: 'right': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(64): note: see previous definition of 'public: static Vector3D const Vector3D::right'
+  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(67): note: see previous definition of 'public: static Vector3D const Vector3D::right'
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(11): error C2491: 'Vector3D::right': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(33): warning C4273: 'Vector3D::operator !=': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(23): note: see previous definition of '!='
+  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(26): note: see previous definition of '!='
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(38): warning C4273: 'Vector3D::operator <': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(24): note: see previous definition of '<'
+  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(27): note: see previous definition of '<'
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(43): warning C4273: 'Vector3D::operator >': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(25): note: see previous definition of '>'
+  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(28): note: see previous definition of '>'
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(48): warning C4273: 'Vector3D::LengthSquared': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(66): note: see previous definition of 'LengthSquared'
+  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(69): note: see previous definition of 'LengthSquared'
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(53): warning C4273: 'Vector3D::Length': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(67): note: see previous definition of 'Length'
+  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(70): note: see previous definition of 'Length'
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(58): warning C4273: 'Vector3D::Normalize': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(68): note: see previous definition of 'Normalize'
+  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(71): note: see previous definition of 'Normalize'
 c:\users\garrett\source\repos\ncgame\engine\vector3d.cpp(75): warning C4273: 'Vector3D::Normalized': inconsistent dll linkage
-  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(69): note: see previous definition of 'Normalized'
+  c:\users\garrett\source\repos\ncgame\engine\vector3d.h(72): note: see previous definition of 'Normalized'
   Generating Code...

@@ -19,13 +19,21 @@ bool Engine::Initialize()
 	SDL_Init(SDL_INIT_EVERYTHING);
 	TTF_Init();
 	m_window = SDL_CreateWindow("Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN);
-	
+
 	Timer::Instance()->Initialize(this);
 	Renderer::Instance()->Initialize(this);
 	TextureManager::Instance()->Initialize(this);
 	InputManager::Instance()->Initialize(this);
 	AudioSystem::Instance()->Initialize(this);
 
+	InputManager::Instance()->AddAction("fire", SDL_BUTTON_LEFT, InputManager::eDevice::MOUSE);
+	InputManager::Instance()->AddAction("left", SDL_SCANCODE_LEFT, InputManager::eDevice::KEYBOARD);
+	InputManager::Instance()->AddAction("right", SDL_SCANCODE_RIGHT, InputManager::eDevice::KEYBOARD);
+	InputManager::Instance()->AddAction("steer", InputManager::eAxis::X, InputManager::eDevice::MOUSE);
+
+	AudioSystem::Instance()->AddSound("laser", "..\\Content\\Sounds\\laser.wav");
+	//AudioSystem::Instance()->PlaySound("laser");
+	
 	text = TextManager::Instance()->CreateText("Hello", "..\\Content\\fonts\\Courier.ttf", 24, Color::red);
 
 	return true;
@@ -62,38 +70,50 @@ void Engine::Update()
 		{
 			m_isQuit = true;
 		}
-		
+
 	}
 
 	SDL_PumpEvents();
 
-	
 
-	if (InputManager::Instance()->GetButtonAction(SDL_SCANCODE_A) == InputManager::eAction::RELEASED)
+	if (InputManager::Instance()->GetActionButton("fire") == InputManager::eButtonState::PRESSED)
 	{
-		std::cout << "released\n";
+		AudioSystem::Instance()->PlaySound("laser");
+		std::cout << "button\n";
 	}
 
-	// INPUT
 	const Uint8* keystate = SDL_GetKeyboardState(nullptr);
-	int x, y;
-	if ((SDL_GetMouseState(&x, &y) && SDL_BUTTON(SDL_BUTTON_LEFT)) == (InputManager::eAction::PRESSED))
-	{
-		std::cout << "left mouse button pressed\n";
-	}
-	
-	// --INPUT--
+
+	float steer = InputManager::Instance()->GetActionAxisRelative("steer");
+	angle += (steer * 20.0f) * Timer::Instance()->DeltaTime();
+
+
+
+	 //--INPUT--
 	// LEFT RIGHT
-	if ((keystate[SDL_SCANCODE_LEFT] == InputManager::eAction::PRESSED)
-		|| (keystate[SDL_SCANCODE_LEFT] == InputManager::eAction::RELEASED)) angle -= 90.0f * Timer::Instance()->DeltaTime();
-	if ((keystate[SDL_SCANCODE_RIGHT] == InputManager::eAction::PRESSED)
-		|| (keystate[SDL_SCANCODE_RIGHT] == InputManager::eAction::RELEASED)) angle += 90.0f * Timer::Instance()->DeltaTime();
+	if ((keystate[SDL_SCANCODE_LEFT] == InputManager::eButtonState::PRESSED)
+		|| (keystate[SDL_SCANCODE_LEFT] == InputManager::eButtonState::RELEASED)) 
+	{
+	angle -= 90.0f * Timer::Instance()->DeltaTime();
+	}
+
+	if ((keystate[SDL_SCANCODE_RIGHT] == InputManager::eButtonState::PRESSED)
+		|| (keystate[SDL_SCANCODE_RIGHT] == InputManager::eButtonState::RELEASED)) 
+	{
+		angle += 90.0f * Timer::Instance()->DeltaTime();
+	}
 	// UP DOWN
 	Vector2D force = Vector2D::zero;
-	if ((keystate[SDL_SCANCODE_UP] == InputManager::eAction::PRESSED)
-		|| (keystate[SDL_SCANCODE_UP] == InputManager::eAction::RELEASED)) force.y = -200.0f * Timer::Instance()->DeltaTime();
-	if ((keystate[SDL_SCANCODE_DOWN] == InputManager::eAction::PRESSED)
-		|| (keystate[SDL_SCANCODE_DOWN] == InputManager::eAction::RELEASED)) force.y = 200.0f * Timer::Instance()->DeltaTime();
+	if ((keystate[SDL_SCANCODE_UP] == InputManager::eButtonState::PRESSED)
+		|| (keystate[SDL_SCANCODE_UP] == InputManager::eButtonState::RELEASED))
+	{
+		force.y = -200.0f * Timer::Instance()->DeltaTime();
+	}
+	if ((keystate[SDL_SCANCODE_DOWN] == InputManager::eButtonState::PRESSED)
+		|| (keystate[SDL_SCANCODE_DOWN] == InputManager::eButtonState::RELEASED)) 
+	{
+		force.y = 200.0f * Timer::Instance()->DeltaTime();
+	}
 
 	Matrix22 mx;
 	mx.Rotate(angle * Math::DegreesToRadians);
@@ -104,12 +124,13 @@ void Engine::Update()
 	Renderer::Instance()->SetColor(Color::black);
 
 	// DRAW TEXT
-	text = TextManager::Instance()->CreateText("Hello", "..\\Content\\fonts\\Courier.ttf", 24, Color::red);
+	float x = InputManager::Instance()->GetActionAxisRelative("steer");
+	std::string str = std::to_string(x);
+
 	std::vector<Color>colors = { Color::red, Color::green, Color::white };
-	text->SetText("Hello World", colors[rand() % colors.size()]);
+	text->SetText(str, colors[rand() % colors.size()]);
 	text->Draw(Vector2D(10.0f, 10.0f), 0.0f);
 
-	
 	// DRAW CAR
 	SDL_Texture* texture = TextureManager::Instance()->GetTexture("..\\Content\\car.bmp");
 	Renderer::Instance()->DrawTexture(texture, position, angle);
