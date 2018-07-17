@@ -30,9 +30,6 @@
     <ClInclude Include="audioSystem.h">
       <Filter>Systems</Filter>
     </ClInclude>
-    <ClInclude Include="math.h">
-      <Filter>Math</Filter>
-    </ClInclude>
     <ClInclude Include="matrix22.h">
       <Filter>Math</Filter>
     </ClInclude>
@@ -66,13 +63,13 @@
     <ClInclude Include="text.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="_math.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="math.cpp">
-      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="matrix22.cpp">
       <Filter>Math</Filter>
@@ -109,6 +106,9 @@
     </ClCompile>
     <ClCompile Include="text.cpp">
       <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="_math.cpp">
+      <Filter>Math</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

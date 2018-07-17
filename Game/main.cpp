@@ -1,15 +1,17 @@
-
+#include "game.h"
 #include "engine.h"
 
 int main(int argc, char* argv[])
 {
 	Engine engine;
-
-	engine.Initialize();
-	while (!engine.IsQuit())
+	Game game(&engine);
+	
+	game.Initialize();
+	while (game.Run())
 	{
-		engine.Update();
+		game.Update();
 	}
-	engine.Shutdown();
+	game.Shutdown();
+	
 	return 0;
 }

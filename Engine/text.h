@@ -4,7 +4,7 @@
 #include "color.h"
 #include "vector2D.h"
 
-class Text
+class ENGINE_API Text
 {
 public:
 	Text(const std::string& text, const std::string& fontname, int size, const Color& color);

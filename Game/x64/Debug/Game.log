@@ -1,1 +1,4 @@
-﻿LINK : fatal error LNK1561: entry point must be defined
+﻿  game.cpp
+  main.cpp
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'SDL2_ttf.lib'

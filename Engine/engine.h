@@ -10,6 +10,8 @@
 #define ENGINE_API __declspec(dllimport)   
 #endif 
 
+#pragma warning(disable:4251)
+
 #include "sdl.h"
 
 class ENGINE_API Engine

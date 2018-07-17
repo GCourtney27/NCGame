@@ -119,7 +119,7 @@ float InputManager::GetActionAxisRelative(const std::string action)
 	float axis = 0.0f;
 
 	auto iter = m_actions.find(action);
-	if (iter == m_actions.end())
+	if (iter != m_actions.end())
 	{
 		InputInfo inputInfo = iter->second;
 		axis = GetAxisRelative(inputInfo.id, inputInfo.device, inputInfo.index);
@@ -132,12 +132,11 @@ InputManager::eButtonState InputManager::GetButtonState(int id, eDevice device, 
 {
 	eButtonState state = eButtonState::IDLE;
 	bool buttonDown = GetButtonDown(id, device, index);
-
-	bool prevbuttonDown = GetButtonDown(id, device, index);
+	bool prevbuttonDown = GetPreviousButtonDown(id, device, index);
 
 	if (buttonDown)
 	{
-		state = (prevbuttonDown) ? eButtonState::PRESSED : eButtonState::HELD;
+		state = (!prevbuttonDown) ? eButtonState::PRESSED : eButtonState::HELD;
 	}
 	else
 	{

@@ -1,4 +1,17 @@
-﻿  color.cpp
+﻿  audioSystem.cpp
+c:\users\garrett\source\repos\ncgame\engine\audiosystem.cpp(7): warning C4273: 'AudioSystem::Initialize': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\audiosystem.h(11): note: see previous definition of 'Initialize'
+c:\users\garrett\source\repos\ncgame\engine\audiosystem.cpp(22): warning C4273: 'AudioSystem::Update': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\audiosystem.h(13): note: see previous definition of 'Update'
+c:\users\garrett\source\repos\ncgame\engine\audiosystem.cpp(28): warning C4273: 'AudioSystem::Shutdown': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\audiosystem.h(12): note: see previous definition of 'Shutdown'
+c:\users\garrett\source\repos\ncgame\engine\audiosystem.cpp(37): warning C4273: 'AudioSystem::AddSound': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\audiosystem.h(15): note: see previous definition of 'AddSound'
+c:\users\garrett\source\repos\ncgame\engine\audiosystem.cpp(47): warning C4273: 'AudioSystem::PlaySound': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\audiosystem.h(16): note: see previous definition of 'PlaySound'
+c:\users\garrett\source\repos\ncgame\engine\audiosystem.cpp(63): warning C4273: 'AudioSystem::RemoveSound': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\audiosystem.h(17): note: see previous definition of 'RemoveSound'
+  color.cpp
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(3): warning C4273: 'red': inconsistent dll linkage
   c:\users\garrett\source\repos\ncgame\engine\color.h(53): note: see previous definition of 'public: static Color const Color::red'
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(3): error C2491: 'Color::red': definition of dllimport static data member not allowed
@@ -26,6 +39,53 @@ c:\users\garrett\source\repos\ncgame\engine\color.cpp(10): error C2491: 'Color::
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(11): warning C4273: 'black': inconsistent dll linkage
   c:\users\garrett\source\repos\ncgame\engine\color.h(61): note: see previous definition of 'public: static Color const Color::black'
 c:\users\garrett\source\repos\ncgame\engine\color.cpp(11): error C2491: 'Color::black': definition of dllimport static data member not allowed
+  engine.cpp
+c:\users\garrett\source\repos\ncgame\engine\engine.cpp(16): warning C4273: 'Engine::Initialize': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\engine.h(23): note: see previous definition of 'Initialize'
+c:\users\garrett\source\repos\ncgame\engine\engine.cpp(35): warning C4273: 'Engine::Shutdown': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\engine.h(25): note: see previous definition of 'Shutdown'
+c:\users\garrett\source\repos\ncgame\engine\engine.cpp(48): warning C4273: 'Engine::Update': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\engine.h(24): note: see previous definition of 'Update'
+  inputManager.cpp
+c:\users\garrett\source\repos\ncgame\engine\inputmanager.cpp(6): warning C4273: 'InputManager::Initialize': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\inputmanager.h(55): note: see previous definition of 'Initialize'
+c:\users\garrett\source\repos\ncgame\engine\inputmanager.cpp(39): warning C4273: 'InputManager::Shutdown': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\inputmanager.h(56): note: see previous definition of 'Shutdown'
+c:\users\garrett\source\repos\ncgame\engine\inputmanager.cpp(45): warning C4273: 'InputManager::Update': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\inputmanager.h(57): note: see previous definition of 'Update'
+c:\users\garrett\source\repos\ncgame\engine\inputmanager.cpp(80): warning C4273: 'InputManager::AddAction': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\inputmanager.h(59): note: see previous definition of 'AddAction'
+c:\users\garrett\source\repos\ncgame\engine\inputmanager.cpp(90): warning C4273: 'InputManager::GetActionButton': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\inputmanager.h(60): note: see previous definition of 'GetActionButton'
+c:\users\garrett\source\repos\ncgame\engine\inputmanager.cpp(104): warning C4273: 'InputManager::GetActionAxisAbsolute': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\inputmanager.h(61): note: see previous definition of 'GetActionAxisAbsolute'
+c:\users\garrett\source\repos\ncgame\engine\inputmanager.cpp(118): warning C4273: 'InputManager::GetActionAxisRelative': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\inputmanager.h(62): note: see previous definition of 'GetActionAxisRelative'
+c:\users\garrett\source\repos\ncgame\engine\inputmanager.cpp(132): warning C4273: 'InputManager::GetButtonState': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\inputmanager.h(64): note: see previous definition of 'GetButtonState'
+c:\users\garrett\source\repos\ncgame\engine\inputmanager.cpp(150): warning C4273: 'InputManager::GetAxisAbsolute': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\inputmanager.h(65): note: see previous definition of 'GetAxisAbsolute'
+c:\users\garrett\source\repos\ncgame\engine\inputmanager.cpp(174): warning C4273: 'InputManager::GetAxisRelative': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\inputmanager.h(66): note: see previous definition of 'GetAxisRelative'
+c:\users\garrett\source\repos\ncgame\engine\inputmanager.cpp(197): warning C4273: 'InputManager::GetButtonDown': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\inputmanager.h(70): note: see previous definition of 'GetButtonDown'
+c:\users\garrett\source\repos\ncgame\engine\inputmanager.cpp(221): warning C4273: 'InputManager::GetPreviousButtonDown': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\inputmanager.h(71): note: see previous definition of 'GetPreviousButtonDown'
+  _math.cpp
+c:\users\garrett\source\repos\ncgame\engine\_math.cpp(8): warning C4273: 'Math::Clamp': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\_math.h(18): note: see previous definition of 'Clamp'
+c:\users\garrett\source\repos\ncgame\engine\_math.cpp(13): warning C4273: 'Math::Clamp01': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\_math.h(19): note: see previous definition of 'Clamp01'
+c:\users\garrett\source\repos\ncgame\engine\_math.cpp(18): warning C4273: 'Math::GetRandom01': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\_math.h(20): note: see previous definition of 'GetRandom01'
+c:\users\garrett\source\repos\ncgame\engine\_math.cpp(23): warning C4273: 'Math::GetRandomRange': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\_math.h(21): note: see previous definition of 'GetRandomRange'
+c:\users\garrett\source\repos\ncgame\engine\_math.cpp(28): warning C4273: 'Math::Lerp': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\_math.h(22): note: see previous definition of 'Lerp'
+c:\users\garrett\source\repos\ncgame\engine\_math.cpp(34): warning C4273: 'Math::LerpUnclamped': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\_math.h(23): note: see previous definition of 'LerpUnclamped'
+c:\users\garrett\source\repos\ncgame\engine\_math.cpp(39): warning C4273: 'Math::IsZero': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\_math.h(24): note: see previous definition of 'IsZero'
   matrix22.cpp
 c:\users\garrett\source\repos\ncgame\engine\matrix22.cpp(3): warning C4273: 'identity': inconsistent dll linkage
   c:\users\garrett\source\repos\ncgame\engine\matrix22.h(71): note: see previous definition of 'public: static Matrix22 const Matrix22::identity'
@@ -38,6 +98,59 @@ c:\users\garrett\source\repos\ncgame\engine\matrix33.cpp(3): warning C4273: 'ide
 c:\users\garrett\source\repos\ncgame\engine\matrix33.cpp(3): error C2491: 'Matrix33::identity': definition of dllimport static data member not allowed
 c:\users\garrett\source\repos\ncgame\engine\matrix33.cpp(6): warning C4273: 'Matrix33::Rotate': inconsistent dll linkage
   c:\users\garrett\source\repos\ncgame\engine\matrix33.h(42): note: see previous definition of 'Rotate'
+  renderer.cpp
+c:\users\garrett\source\repos\ncgame\engine\renderer.cpp(4): warning C4273: 'Renderer::Initialize': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\renderer.h(13): note: see previous definition of 'Initialize'
+c:\users\garrett\source\repos\ncgame\engine\renderer.cpp(11): warning C4273: 'Renderer::Shutdown': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\renderer.h(14): note: see previous definition of 'Shutdown'
+c:\users\garrett\source\repos\ncgame\engine\renderer.cpp(16): warning C4273: 'Renderer::BeginFrame': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\renderer.h(18): note: see previous definition of 'BeginFrame'
+c:\users\garrett\source\repos\ncgame\engine\renderer.cpp(21): warning C4273: 'Renderer::EndFrame': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\renderer.h(19): note: see previous definition of 'EndFrame'
+c:\users\garrett\source\repos\ncgame\engine\renderer.cpp(26): warning C4273: 'Renderer::SetColor': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\renderer.h(21): note: see previous definition of 'SetColor'
+c:\users\garrett\source\repos\ncgame\engine\renderer.cpp(31): warning C4273: 'Renderer::DrawTexture': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\renderer.h(22): note: see previous definition of 'DrawTexture'
+c:\users\garrett\source\repos\ncgame\engine\renderer.cpp(41): warning C4273: 'Renderer::DrawTexture': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\renderer.h(23): note: see previous definition of 'DrawTexture'
+  text.cpp
+c:\users\garrett\source\repos\ncgame\engine\text.cpp(7): warning C4273: 'Text::Text': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\text.h(10): note: see previous definition of '{ctor}'
+c:\users\garrett\source\repos\ncgame\engine\text.cpp(16): warning C4273: 'Text::~Text': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\text.h(11): note: see previous definition of '{dtor}'
+c:\users\garrett\source\repos\ncgame\engine\text.cpp(22): warning C4273: 'Text::Draw': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\text.h(13): note: see previous definition of 'Draw'
+c:\users\garrett\source\repos\ncgame\engine\text.cpp(30): warning C4273: 'Text::SetText': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\text.h(15): note: see previous definition of 'SetText'
+c:\users\garrett\source\repos\ncgame\engine\text.cpp(39): warning C4273: 'Text::SetText': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\text.h(16): note: see previous definition of 'SetText'
+c:\users\garrett\source\repos\ncgame\engine\text.cpp(49): warning C4273: 'Text::SetColor': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\text.h(17): note: see previous definition of 'SetColor'
+c:\users\garrett\source\repos\ncgame\engine\text.cpp(58): warning C4273: 'Text::Create': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\text.h(20): note: see previous definition of 'Create'
+  textManager.cpp
+c:\users\garrett\source\repos\ncgame\engine\textmanager.cpp(4): warning C4273: 'TextManager::Initialize': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\textmanager.h(12): note: see previous definition of 'Initialize'
+c:\users\garrett\source\repos\ncgame\engine\textmanager.cpp(13): warning C4273: 'TextManager::Shutdown': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\textmanager.h(13): note: see previous definition of 'Shutdown'
+c:\users\garrett\source\repos\ncgame\engine\textmanager.cpp(24): warning C4273: 'TextManager::CreateText': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\textmanager.h(15): note: see previous definition of 'CreateText'
+c:\users\garrett\source\repos\ncgame\engine\textmanager.cpp(32): warning C4273: 'TextManager::DestroyText': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\textmanager.h(16): note: see previous definition of 'DestroyText'
+  textureManager.cpp
+c:\users\garrett\source\repos\ncgame\engine\texturemanager.cpp(6): warning C4273: 'TextureManager::Initialize': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\texturemanager.h(11): note: see previous definition of 'Initialize'
+c:\users\garrett\source\repos\ncgame\engine\texturemanager.cpp(13): warning C4273: 'TextureManager::Shutdown': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\texturemanager.h(12): note: see previous definition of 'Shutdown'
+c:\users\garrett\source\repos\ncgame\engine\texturemanager.cpp(21): warning C4273: 'TextureManager::GetTexture': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\texturemanager.h(14): note: see previous definition of 'GetTexture'
+  timer.cpp
+c:\users\garrett\source\repos\ncgame\engine\timer.cpp(4): warning C4273: 'Timer::Initialize': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\timer.h(10): note: see previous definition of 'Initialize'
+c:\users\garrett\source\repos\ncgame\engine\timer.cpp(12): warning C4273: 'Timer::Shutdown': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\timer.h(11): note: see previous definition of 'Shutdown'
+c:\users\garrett\source\repos\ncgame\engine\timer.cpp(16): warning C4273: 'Timer::Update': inconsistent dll linkage
+  c:\users\garrett\source\repos\ncgame\engine\timer.h(12): note: see previous definition of 'Update'
   vector2D.cpp
 c:\users\garrett\source\repos\ncgame\engine\vector2d.cpp(7): warning C4273: 'zero': inconsistent dll linkage
   c:\users\garrett\source\repos\ncgame\engine\vector2d.h(53): note: see previous definition of 'public: static Vector2D const Vector2D::zero'
