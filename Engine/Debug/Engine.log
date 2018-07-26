@@ -1,2 +1,6 @@
-﻿  inputManager.cpp
+﻿  engine.cpp
+  kinematicComponent.cpp
+  physics.cpp
+  Generating Code...
+     Creating library C:\Users\Garrett\source\repos\NCGame\Debug\Engine.lib and object C:\Users\Garrett\source\repos\NCGame\Debug\Engine.exp
   Engine.vcxproj -> C:\Users\Garrett\source\repos\NCGame\Debug\Engine.dll

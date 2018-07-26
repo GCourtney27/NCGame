@@ -8,6 +8,7 @@
 #include "text.h"
 #include "textManager.h"
 #include "SDL_ttf.h"
+#include "physics.h"
 #include <cassert>
 #include <iostream>
 
@@ -23,6 +24,7 @@ bool Engine::Initialize()
 	TextureManager::Instance()->Initialize(this);
 	InputManager::Instance()->Initialize(this);
 	AudioSystem::Instance()->Initialize(this);
+	Physics::Instance()->Initialize(this);
 
 	
 	AudioSystem::Instance()->AddSound("laser", "..\\Content\\Sounds\\laser.wav");
@@ -33,6 +35,7 @@ bool Engine::Initialize()
 
 void Engine::Shutdown()
 {
+	Physics::Instance()->Shutdown();
 	AudioSystem::Instance()->Shutdown();
 	InputManager::Instance()->Shutdown();
 	TextureManager::Instance()->Shutdown();
@@ -49,6 +52,8 @@ void Engine::Update()
 	Timer::Instance()->Update();
 	Timer::Instance()->SetTimeScale(1.0f);
 	InputManager::Instance()->Update();
+	AudioSystem::Instance()->Update();
+	Physics::Instance()->Update();
 
 	SDL_Event event;
 	SDL_PollEvent(&event);

@@ -19,6 +19,12 @@
     <Filter Include="Graphics">
       <UniqueIdentifier>{2b6c93d5-6483-45c2-b37e-10f11d5cfcc4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{b7a49a72-06e7-424a-9faa-45a672c2b289}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{beaf4ad2-9108-48ba-9b66-c589465db4dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -66,6 +72,45 @@
     <ClInclude Include="_math.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="id.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="renderComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="spriteComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="transformComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="controllerComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="physics.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="physicsComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="kinematicComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -109,6 +154,39 @@
     </ClCompile>
     <ClCompile Include="_math.cpp">
       <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="id.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="object.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="component.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="spriteComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="transformComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="controllerComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="physics.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="kinematicComponent.cpp">
+      <Filter>Components</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

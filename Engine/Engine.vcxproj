@@ -39,13 +39,13 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -81,7 +81,7 @@
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -92,9 +92,10 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;fmod64_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;SDL_image.lib;fmod64_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -113,7 +114,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -126,19 +127,33 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;fmod64_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;SDL_image.lib;fmod64_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="audioSystem.h" />
     <ClInclude Include="color.h" />
+    <ClInclude Include="component.h" />
+    <ClInclude Include="controllerComponent.h" />
     <ClInclude Include="engine.h" />
+    <ClInclude Include="entity.h" />
+    <ClInclude Include="id.h" />
     <ClInclude Include="inputManager.h" />
+    <ClInclude Include="kinematicComponent.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="physics.h" />
+    <ClInclude Include="physicsComponent.h" />
+    <ClInclude Include="renderComponent.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="spriteComponent.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="transformComponent.h" />
     <ClInclude Include="_math.h" />
     <ClInclude Include="matrix22.h" />
     <ClInclude Include="matrix33.h" />
@@ -154,8 +169,19 @@
   <ItemGroup>
     <ClCompile Include="audioSystem.cpp" />
     <ClCompile Include="color.cpp" />
+    <ClCompile Include="component.cpp" />
+    <ClCompile Include="controllerComponent.cpp" />
     <ClCompile Include="engine.cpp" />
+    <ClCompile Include="entity.cpp" />
+    <ClCompile Include="id.cpp" />
     <ClCompile Include="inputManager.cpp" />
+    <ClCompile Include="kinematicComponent.cpp" />
+    <ClCompile Include="object.cpp" />
+    <ClCompile Include="physics.cpp" />
+    <ClCompile Include="scene.cpp" />
+    <ClCompile Include="spriteComponent.cpp" />
+    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="transformComponent.cpp" />
     <ClCompile Include="_math.cpp" />
     <ClCompile Include="matrix22.cpp" />
     <ClCompile Include="matrix33.cpp" />

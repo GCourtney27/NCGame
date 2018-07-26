@@ -82,7 +82,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86;%(AdditionalLibraryDirectories);$(ProjectDir)..\Engine\Debug\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -95,7 +95,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64;%(AdditionalLibraryDirectories);$(ProjectDir)..\Engine\Debug\</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -114,7 +115,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Console</SubSystem>
       <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86;%(AdditionalLibraryDirectories);$(ProjectDir)..\Engine\Debug\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -131,12 +132,14 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64;%(AdditionalLibraryDirectories);$(ProjectDir)..\Engine\Debug\</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="shipControllerComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">
@@ -145,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
+    <ClInclude Include="shipControllerComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

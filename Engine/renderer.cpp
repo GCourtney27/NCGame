@@ -1,15 +1,19 @@
 #include "renderer.h"
+#include "texture.h"
+#include <SDL_image.h>
 
 bool Renderer::Initialize(Engine * engine)
 {
 	m_engine = engine;
 	m_renderer = SDL_CreateRenderer(m_engine->GetWindow(), -1, 0);
+	IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
 	return true;
 }
 
 void Renderer::Shutdown()
 {
 	SDL_DestroyRenderer(m_renderer);
+	IMG_Quit();
 }
 
 void Renderer::BeginFrame()
@@ -47,5 +51,10 @@ void Renderer::DrawTexture(SDL_Texture * texture, const Vector2D & position, con
 	dest.w = static_cast<int>(size.x);
 	dest.h = static_cast<int>(size.y);
 	SDL_RenderCopyEx(m_renderer, texture, nullptr, &dest, angle, nullptr, SDL_FLIP_NONE);
+}
+
+void Renderer::DrawTexture(Texture * texture, const Vector2D & position, const Vector2D & scale, float angle)
+{
+	DrawTexture(texture->m_sdlTexture, position, scale, angle);
 }
 
