@@ -11,7 +11,7 @@
 #include "physics.h"
 #include <cassert>
 #include <iostream>
-
+#include "fileSystem.h"
 
 bool Engine::Initialize()
 {
@@ -19,6 +19,7 @@ bool Engine::Initialize()
 	TTF_Init();
 	m_window = SDL_CreateWindow("Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN);
 
+	FileSystem::Instance()->Initialize(this);
 	Timer::Instance()->Initialize(this);
 	Renderer::Instance()->Initialize(this);
 	TextureManager::Instance()->Initialize(this);
@@ -26,15 +27,14 @@ bool Engine::Initialize()
 	AudioSystem::Instance()->Initialize(this);
 	Physics::Instance()->Initialize(this);
 
-	
-	AudioSystem::Instance()->AddSound("laser", "..\\Content\\Sounds\\laser.wav");
-	//AudioSystem::Instance()->PlaySound("laser");
+	Physics::Instance()->SetGravity(Vector2D(0.0f, 400.0f));
 
 	return true;
 }
 
 void Engine::Shutdown()
 {
+	FileSystem::Instance()->Shutdown();
 	Physics::Instance()->Shutdown();
 	AudioSystem::Instance()->Shutdown();
 	InputManager::Instance()->Shutdown();
@@ -54,6 +54,7 @@ void Engine::Update()
 	InputManager::Instance()->Update();
 	AudioSystem::Instance()->Update();
 	Physics::Instance()->Update();
+	FileSystem::Instance()->Update();
 
 	SDL_Event event;
 	SDL_PollEvent(&event);

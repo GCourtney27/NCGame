@@ -8,6 +8,9 @@
     <Filter Include="Components">
       <UniqueIdentifier>{486d742a-2c94-4c72-abfc-104442d651b6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{c3f66bcc-184f-4961-ace4-d4ccc209e772}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -19,12 +22,36 @@
     <ClCompile Include="shipControllerComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
+    <ClCompile Include="ship.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="missile.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyControllerComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="shipControllerComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ship.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="missile.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyControllerComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>

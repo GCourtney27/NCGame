@@ -137,8 +137,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="enemyControllerComponent.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="missile.cpp" />
+    <ClCompile Include="ship.cpp" />
     <ClCompile Include="shipControllerComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -147,7 +151,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="enemy.h" />
+    <ClInclude Include="enemyControllerComponent.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="missile.h" />
+    <ClInclude Include="ship.h" />
     <ClInclude Include="shipControllerComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

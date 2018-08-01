@@ -1,4 +1,7 @@
 ﻿  game.cpp
   main.cpp
+  missile.cpp
+  ship.cpp
+  shipControllerComponent.cpp
   Generating Code...
 LINK : fatal error LNK1104: cannot open file 'SDL2_ttf.lib'

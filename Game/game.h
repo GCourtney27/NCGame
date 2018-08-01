@@ -14,6 +14,7 @@ public:
 	void Update();
 
 	bool Run() { return m_running; }
+	Scene* GetScene() { return m_scene; }
 
 protected:
 	bool m_running = false;
