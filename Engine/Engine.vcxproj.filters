@@ -25,6 +25,12 @@
     <Filter Include="Components">
       <UniqueIdentifier>{beaf4ad2-9108-48ba-9b66-c589465db4dd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{7c5e97b3-95d7-4795-9ebb-c173d5612f6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Event">
+      <UniqueIdentifier>{08b8293e-2e7e-4075-8bcc-f2ac0855b9cb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -99,9 +105,6 @@
     <ClInclude Include="scene.h">
       <Filter>Objects</Filter>
     </ClInclude>
-    <ClInclude Include="physics.h">
-      <Filter>Systems</Filter>
-    </ClInclude>
     <ClInclude Include="physicsComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
@@ -113,6 +116,33 @@
     </ClInclude>
     <ClInclude Include="fileSystem.h">
       <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="collisionComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="physics.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="aabb.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="aabbComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="event.h">
+      <Filter>Event</Filter>
+    </ClInclude>
+    <ClInclude Include="eventManager.h">
+      <Filter>Event</Filter>
+    </ClInclude>
+    <ClInclude Include="textComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="eventReceiver.h">
+      <Filter>Event</Filter>
+    </ClInclude>
+    <ClInclude Include="animationComponent.h">
+      <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -182,9 +212,6 @@
     <ClCompile Include="controllerComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
-    <ClCompile Include="physics.cpp">
-      <Filter>Systems</Filter>
-    </ClCompile>
     <ClCompile Include="kinematicComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
@@ -193,6 +220,24 @@
     </ClCompile>
     <ClCompile Include="fileSystem.cpp">
       <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="physics.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="aabb.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="aabbComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="eventManager.cpp">
+      <Filter>Event</Filter>
+    </ClCompile>
+    <ClCompile Include="textComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="animationComponent.cpp">
+      <Filter>Components</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

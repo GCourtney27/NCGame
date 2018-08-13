@@ -22,7 +22,8 @@ void TextManager::Shutdown()
 
 Text * TextManager::CreateText(const std::string & text, const std::string & fontname, int size, const Color & color)
 {
-	Text* _text = new Text(text, fontname, size, color);
+	Text* _text = new Text();
+	_text->Create(text, fontname, size, color);
 	assert(_text);
 	m_texts.push_back(_text);
 	return _text;

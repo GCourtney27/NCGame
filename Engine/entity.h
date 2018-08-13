@@ -3,10 +3,12 @@
 #include "component.h"
 #include "scene.h"
 #include "transform.h"
+#include "event.h"
+#include "eventReceiver.h"
 #include <vector>
 #include <assert.h>
 
-class ENGINE_API Entity : public Object
+class ENGINE_API Entity : public Object, public EventReceiver
 {
 
 public:
@@ -25,6 +27,7 @@ public:
 	virtual void Update();
 	virtual void Draw();
 	
+	virtual void OnEvent(const Event& event);
 
 	template<typename T>
 	T* AddComponent()
@@ -59,8 +62,12 @@ public:
 	Scene* GetScene() { return m_scene; }
 	Transform& GetTransform() { return m_transform; }
 
+	void SetTag(const ID& tag) { m_tag = tag; }
+	const ID& GetTag() { return m_tag; }
+
 protected:
 	eState m_state = eState::ACTIVE;
+	ID m_tag;
 	Transform m_transform;
 	Scene * m_scene;
 	std::vector<Component*> m_components;

@@ -35,13 +35,17 @@ void AudioSystem::Shutdown()
 
 void AudioSystem::AddSound(const std::string & id, const std::string & audioname)
 {
-	FMOD::Sound* fmodSound = nullptr;
-	std::string filename = FileSystem::Instance()->GetPathname() + audioname;
-	FMOD_RESULT result = m_fmodSystem->createSound(filename.c_str(), FMOD_DEFAULT, 0, &fmodSound);
-	if (result == FMOD_OK)
+	if (m_sounds.find(id) == m_sounds.end())
 	{
-		m_sounds[id] = fmodSound;
+		FMOD::Sound* fmodSound = nullptr;
+		std::string filename = FileSystem::Instance()->GetPathname() + audioname;
+		FMOD_RESULT result = m_fmodSystem->createSound(filename.c_str(), FMOD_DEFAULT, 0, &fmodSound);
+		if (result == FMOD_OK)
+		{
+			m_sounds[id] = fmodSound;
+		}
 	}
+	
 }
 
 void AudioSystem::PlaySound(const std::string & id, bool loop)

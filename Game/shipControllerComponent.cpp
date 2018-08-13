@@ -6,6 +6,7 @@
 #include "missile.h"
 #include "vector2D.h"
 #include "audioSystem.h"
+#include "scene.h"
 
 void ShipControllerComponent::Create(float speed)
 {
@@ -40,13 +41,19 @@ void ShipControllerComponent::Update()
 
 	if ((InputManager::Instance()->GetActionButton("fire") == InputManager::eButtonState::PRESSED))
 	{
-		
+		std::vector<Entity*> missiles = m_owner->GetScene()->GetEntitiesWithTag("playermissile");
 
-		Missile* missle = new Missile(m_owner->GetScene());
-		missle->Create(m_owner->GetTransform().position, Vector2D::down, 8000.0f);
-		m_owner->GetScene()->AddEntity(missle);
+		float dt = Timer::Instance()->DeltaTime();
+		m_timer = m_timer - dt;
+		if (missiles.size() < 2)
+		{
+			m_timer = m_fireRate;
+			Missile* missle = new Missile(m_owner->GetScene());
+			missle->Create("playermissile", m_owner->GetTransform().position, Vector2D::down, 800.0f);
+			m_owner->GetScene()->AddEntity(missle);
 
-		AudioSystem::Instance()->PlaySound("fire");
+			AudioSystem::Instance()->PlaySound("fire");
+		}
 	}
 
 

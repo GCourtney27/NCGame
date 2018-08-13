@@ -1,6 +1,11 @@
 #include "scene.h"
 #include "entity.h"
+#include "collisionComponent.h"
+#include "eventManager.h"
+#include "renderComponent.h"
 #include <assert.h>
+#include <iostream>
+#include <algorithm>
 
 bool Scene::Initialize()
 {
@@ -18,18 +23,77 @@ void Scene::Shutdown()
 
 void Scene::Update()
 {
-	size_t size = m_entities.size();
 	for (Entity* entity : m_entities)
 	{
 		entity->Update();
+	}
+
+	// update collision
+	std::vector<ICollisionComonent*>collisionComonents;
+	for (Entity* entity : m_entities)
+	{
+		ICollisionComonent* CollisionComponent = entity->GetComponent<ICollisionComonent>();
+		if (CollisionComponent)
+		{
+			collisionComonents.push_back(CollisionComponent);
+		}
+	}
+
+	for (size_t i = 0; i < collisionComonents.size(); i++)
+	{
+		for (size_t j = i + 1; j < collisionComonents.size(); j++)
+		{
+			if (collisionComonents[i]->Intersects(collisionComonents[j]))
+			{
+				Event event;
+				event.eventID = COLLISION_EVENT;
+
+				event.receiver = collisionComonents[i]->GetOwner();
+				event.sender = collisionComonents[j]->GetOwner();
+				EventManager::Instance()->SendMessage(event);
+
+				event.receiver = collisionComonents[j]->GetOwner();
+				event.sender = collisionComonents[i]->GetOwner();
+				EventManager::Instance()->SendMessage(event);
+			}
+		}
+	}
+
+
+	std::list<Entity*>::iterator iter = m_entities.begin();
+	while (iter != m_entities.end())
+	{
+		if ((*iter)->GetState() == Entity::DESTROY)
+		{
+			iter = RemoveEntity(*iter);
+		}
+		else
+		{
+			iter++;
+		}
 	}
 }
 
 void Scene::Draw()
 {
+
+	std::vector<IRenderComponent*>renderComonents;
 	for (Entity* entity : m_entities)
 	{
-		entity->Draw();
+		IRenderComponent* renderComonent = entity->GetComponent<IRenderComponent>();
+		if (renderComonent)
+		{
+			renderComonents.push_back(renderComonent);
+		}
+	}
+
+	std::sort(renderComonents.begin(), renderComonents.end(), IRenderComponent::CompareDepth);
+	for (IRenderComponent* renderComponent : renderComonents)
+	{
+		if (renderComponent->IsDepth())
+		{
+		}
+			renderComponent->Draw();
 	}
 }
 
@@ -41,7 +105,7 @@ void Scene::AddEntity(Entity * entity)
 	m_entities.push_back(entity);
 }
 
-void Scene::RemoveEntity(Entity * entity, bool destroy)
+std::list<Entity*>::iterator Scene::RemoveEntity(Entity * entity, bool destroy)
 {
 	assert(std::find(m_entities.begin(), m_entities.end(), entity) != m_entities.end());
 	assert(entity);
@@ -54,11 +118,13 @@ void Scene::RemoveEntity(Entity * entity, bool destroy)
 			(*iter)->Destroy();
 			delete *iter;
 		}
-		m_entities.erase(iter);
+	iter = m_entities.erase(iter);
 	}
+
+	return iter;
 }
 
-Entity* Scene::FindEntity(const ID & id)
+Entity* Scene::GetEntityWithID(const ID & id)
 {
 	Entity* entity = nullptr;
 
@@ -71,4 +137,19 @@ Entity* Scene::FindEntity(const ID & id)
 		}
 	}
 	return entity;
+}
+
+std::vector<Entity*> Scene::GetEntitiesWithTag(const ID & tag)
+{
+	std::vector<Entity*> entities;
+	
+	for (Entity* entity : m_entities)
+	{
+		if (entity->GetTag() == tag)
+		{
+			entities.push_back(entity);
+		}
+	}
+
+	return entities;
 }

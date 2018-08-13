@@ -18,6 +18,11 @@ public:
 
 	void Draw();
 
+	void SetTexture(Texture* texture) { m_texture = texture; }
+	Texture* GetTexture() { return m_texture; }
+	const Vector2D& GetOrigin() { return m_origin; }
+
+
 protected:
 	Texture* m_texture;
 	Vector2D m_origin;
