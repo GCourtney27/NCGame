@@ -1,5 +1,6 @@
 #include "entity.h"
 #include "renderComponent.h"
+#include "collisionComponent.h"
 #include <assert.h>
 
 void Entity::Destroy()
@@ -49,4 +50,19 @@ void Entity::RemoveComponent(Component * component)
 	auto iter = std::find(m_components.begin(), m_components.end(), component);
 	delete *iter;
 	m_components.erase(iter);
+}
+
+bool Entity::Intersects(Entity * otherEntity)
+{
+	bool intersects = false;
+
+	ICollisionComponent* collisionA = GetComponent<ICollisionComponent>();
+	ICollisionComponent* collisionB = otherEntity->GetComponent<ICollisionComponent>();
+
+	if (collisionA && collisionB)
+	{
+		intersects = collisionA->Intersects(collisionB);
+	}
+
+	return intersects;
 }

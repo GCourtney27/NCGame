@@ -29,6 +29,8 @@ bool Engine::Initialize()
 
 	Physics::Instance()->SetGravity(Vector2D(0.0f, 400.0f));
 
+	m_isDebug = false;
+
 	return true;
 }
 
@@ -73,6 +75,11 @@ void Engine::Update()
 	}
 
 	SDL_PumpEvents();
+
+	if (InputManager::Instance()->GetButtonState(SDL_SCANCODE_GRAVE) == InputManager::eButtonState::PRESSED)
+	{
+		m_isDebug = !m_isDebug;
+	}
 }
 
 

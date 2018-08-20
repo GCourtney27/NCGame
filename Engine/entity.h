@@ -56,6 +56,8 @@ public:
 		return component;
 	}
 
+	bool Intersects(Entity* otherEntity);
+
 	eState GetState() { return m_state; }
 	void SetState(eState state) { m_state = state; }
 

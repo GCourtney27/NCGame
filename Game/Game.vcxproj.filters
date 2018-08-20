@@ -34,6 +34,21 @@
     <ClCompile Include="enemyControllerComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
+    <ClCompile Include="enemyExplosion.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="playerExplosion.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyFlightAnimation.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="states.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyWaypointControllerComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -52,6 +67,21 @@
       <Filter>Objects</Filter>
     </ClInclude>
     <ClInclude Include="enemyControllerComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyExplosion.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="playerExplosion.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyFlightAnimation.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="states.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyWaypointControllerComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>

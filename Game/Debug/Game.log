@@ -1,2 +1,15 @@
-﻿  ship.cpp
+﻿  enemy.cpp
+  enemyControllerComponent.cpp
+  enemyExplosion.cpp
+  enemyFlightAnimation.cpp
+  enemyWaypointControllerComponent.cpp
+c:\users\garrett\source\repos\ncgame\game\enemywaypointcontrollercomponent.cpp(79): warning C4506: no definition for inline function 'float Vector2D::GetAngle(const Vector2D &)'
+  game.cpp
+  main.cpp
+  missile.cpp
+  playerExplosion.cpp
+  ship.cpp
+  shipControllerComponent.cpp
+  states.cpp
+  Generating Code...
   Game.vcxproj -> C:\Users\Garrett\source\repos\NCGame\Debug\Game.exe

@@ -2,17 +2,18 @@
 #include "collisionComponent.h"
 #include "aabb.h"
 
-class ENGINE_API AABBComponent : public ICollisionComonent
+class ENGINE_API AABBComponent : public ICollisionComponent
 {
 public:
-	AABBComponent(Entity* owner) : ICollisionComonent(owner) {}
+	AABBComponent(Entity* owner) : ICollisionComponent(owner) {}
 
-	void Create();
+	void Create(const Vector2D& offset = Vector2D::one);
 	void Destroy();
 	void Update();
 
-	virtual bool Intersects(ICollisionComonent* other);
+	virtual bool Intersects(ICollisionComponent* other);
 
 protected:
 	AABB m_aabb;
+	Vector2D m_offset;
 };

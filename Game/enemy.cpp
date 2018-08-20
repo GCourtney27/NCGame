@@ -6,6 +6,10 @@
 #include "aabbComponent.h"
 #include "audioSystem.h"
 #include "eventManager.h"
+#include "enemyExplosion.h"
+#include "enemyFlightAnimation.h"
+#include "animationComponent.h"
+#include "enemyWaypointControllerComponent.h"
 
 void Enemy::Create(const Vector2D & position)
 {
@@ -16,17 +20,22 @@ void Enemy::Create(const Vector2D & position)
 	KinematicComponent* kinematic = AddComponent<KinematicComponent>();
 	kinematic->Create(500.0f, 0.3f);
 
-	EnemyControllerComponent* enemy = AddComponent<EnemyControllerComponent>();
-	enemy->Create(200.0f);
+	EnemyWaypointControllerComponent* controller = AddComponent<EnemyWaypointControllerComponent>();
+	std::vector<Vector2D> points = {Vector2D(100.0f, 100.0f), Vector2D(300.0f, 400.0f), Vector2D(200.0f, 650.0f) };
+	controller->Create(200.0f, points);
 
 	SpriteComponent* spriteComponent = AddComponent<SpriteComponent>();
 	spriteComponent->Create("enemy01A.png", Vector2D(0.5f, 0.5f));
 
 	AABBComponent* aabbComponent = AddComponent<AABBComponent>();
-	aabbComponent->Create();
+	aabbComponent->Create(Vector2D(0.7f, 0.9f));
 
-	AudioSystem::Instance()->AddSound("explosion", "enemy-hit01.wav");
-	
+	AnimationComponent* animationComponent = AddComponent<AnimationComponent>();
+	std::vector<std::string>textureNames = { "enemy01A.png", "enemy01B.png" };
+	animationComponent->Create(textureNames, 1.0f / 10.0f, AnimationComponent::ePlayBack::LOOP);
+
+	//EnemyFlightAnimation* enemyFlightAnimation = m_scene->AddEntity<EnemyFlightAnimation>();
+	//enemyFlightAnimation->Create(m_transform.position);
 }
 
 void Enemy::Update()
@@ -40,6 +49,8 @@ void Enemy::Update()
 		float y = -100.0f;
 		m_transform.position = Vector2D(x, y);
 	}
+
+	
 }
 
 void Enemy::OnEvent(const Event & event)
@@ -50,9 +61,14 @@ void Enemy::OnEvent(const Event & event)
 		{
  			Event _event;
 			_event.eventID = "add_score";
+			_event.varient.asInteger = 100;
+			_event.varient.type = Varient::INTEGER;
+
 			EventManager::Instance()->SendGameMessage(_event);
 
-			AudioSystem::Instance()->PlaySound("explosion");
+			EnemyExplosion* explosion = m_scene->AddEntity<EnemyExplosion>();
+			explosion->Create(m_transform.position);
+
 			SetState(Entity::DESTROY);
 		}
 

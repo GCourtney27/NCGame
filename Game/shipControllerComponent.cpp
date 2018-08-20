@@ -45,7 +45,7 @@ void ShipControllerComponent::Update()
 
 		float dt = Timer::Instance()->DeltaTime();
 		m_timer = m_timer - dt;
-		if (missiles.size() < 2)
+		if (missiles.size() < 20)
 		{
 			m_timer = m_fireRate;
 			Missile* missle = new Missile(m_owner->GetScene());

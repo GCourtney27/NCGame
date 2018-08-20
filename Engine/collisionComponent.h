@@ -2,10 +2,10 @@
 #include "engine.h"
 #include "component.h"
 
-class ENGINE_API ICollisionComonent : public Component
+class ENGINE_API ICollisionComponent : public Component
 {
 public:
-	ICollisionComonent(Entity* owner) : Component(owner) {}
+	ICollisionComponent(Entity* owner) : Component(owner) {}
 
-	virtual bool Intersects(ICollisionComonent* other) = 0;
+	virtual bool Intersects(ICollisionComponent* other) = 0;
 };

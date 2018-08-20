@@ -29,10 +29,10 @@ void Scene::Update()
 	}
 
 	// update collision
-	std::vector<ICollisionComonent*>collisionComonents;
+	std::vector<ICollisionComponent*>collisionComonents;
 	for (Entity* entity : m_entities)
 	{
-		ICollisionComonent* CollisionComponent = entity->GetComponent<ICollisionComonent>();
+		ICollisionComponent* CollisionComponent = entity->GetComponent<ICollisionComponent>();
 		if (CollisionComponent)
 		{
 			collisionComonents.push_back(CollisionComponent);
