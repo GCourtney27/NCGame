@@ -30,6 +30,19 @@ namespace Math
 		return (v1 * (1.0f - t) + v2 * t);
 	}
 
+	float LerpDegrees(float v1, float v2, float t)
+	{
+		float dv = ::fabs(v2 - v1);
+		if (dv > 180.0f)
+		{
+			if (v2 > v1) v1 += 360.0f;
+			else v2 += 360.0f;
+		}
+		float v = Lerp(v1, v2, t);
+
+		return v;
+	}
+
 	float LerpUnclamped(float v1, float v2, float t)
 	{
 		return (v1 * (1.0f - t) + v2 * t);

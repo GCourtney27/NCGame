@@ -6,23 +6,26 @@
 #include "aabbComponent.h"
 #include "audioSystem.h"
 #include "eventManager.h"
-#include "enemyExplosion.h"
+#include "explosion.h"
 #include "enemyFlightAnimation.h"
 #include "animationComponent.h"
-#include "enemyWaypointControllerComponent.h"
+#include "waypointControllerComponent.h"
+#include <vector>
+#include "transformControllerComponent.h"
+#include "timer.h"
 
-void Enemy::Create(const Vector2D & position)
+std::vector<Vector2D> Enemy::m_enterPath = { Vector2D(200.0f, 400.0f), Vector2D(300.0f, 300.0f), Vector2D(200.0f, 200.0f), Vector2D(100.0f, 300.0f), Vector2D(200.0f, 400.0f) };
+
+void Enemy::Create(const Info& info)
 {
+	m_info = info;
+
 	SetTag("enemy");
-	m_transform.position = position;
+	m_transform.position = (m_info.side == LEFT) ? Vector2D(-64.0f, 400.0f) : Vector2D(864.0f, 400.0f);
 	m_transform.scale = Vector2D(2.0f, 2.0f);
 
 	KinematicComponent* kinematic = AddComponent<KinematicComponent>();
 	kinematic->Create(500.0f, 0.3f);
-
-	EnemyWaypointControllerComponent* controller = AddComponent<EnemyWaypointControllerComponent>();
-	std::vector<Vector2D> points = {Vector2D(100.0f, 100.0f), Vector2D(300.0f, 400.0f), Vector2D(200.0f, 650.0f) };
-	controller->Create(200.0f, points);
 
 	SpriteComponent* spriteComponent = AddComponent<SpriteComponent>();
 	spriteComponent->Create("enemy01A.png", Vector2D(0.5f, 0.5f));
@@ -31,24 +34,33 @@ void Enemy::Create(const Vector2D & position)
 	aabbComponent->Create(Vector2D(0.7f, 0.9f));
 
 	AnimationComponent* animationComponent = AddComponent<AnimationComponent>();
-	std::vector<std::string>textureNames = { "enemy01A.png", "enemy01B.png" };
-	animationComponent->Create(textureNames, 1.0f / 10.0f, AnimationComponent::ePlayBack::LOOP);
+	std::vector<std::string>animations;
+	if (m_info.type == BEE) animations = { "enemy02A.png", "enemy02B.png" };
+	if (m_info.type == BOSS) animations = { "enemy01A.png", "enemy01B.png" };
+	animationComponent->Create(animations, 1.0f / 10.0f, AnimationComponent::ePlayBack::LOOP);
 
-	//EnemyFlightAnimation* enemyFlightAnimation = m_scene->AddEntity<EnemyFlightAnimation>();
-	//enemyFlightAnimation->Create(m_transform.position);
+	m_stateMachine = new StateMachine(GetScene(), this);
+	m_stateMachine->AddState("enter_path", new EnterPathState(m_stateMachine));
+	m_stateMachine->AddState("enter_formation", new EnterFormationState(m_stateMachine));
+	m_stateMachine->AddState("idle", new IdleState(m_stateMachine));
+	m_stateMachine->AddState("attack", new AttackState(m_stateMachine));
+
+	m_stateMachine->SetState("enter_path");
 }
 
 void Enemy::Update()
 {
 	Entity::Update();
 
-	Vector2D size = Renderer::Instance()->GetSize();
+	m_stateMachine->Update();
+
+	/*Vector2D size = Renderer::Instance()->GetSize();
 	if (m_transform.position.y > size.y)
 	{
 		float x = Math::GetRandomRange(0.0f, size.y);
 		float y = -100.0f;
 		m_transform.position = Vector2D(x, y);
-	}
+	}*/
 
 	
 }
@@ -66,8 +78,9 @@ void Enemy::OnEvent(const Event & event)
 
 			EventManager::Instance()->SendGameMessage(_event);
 
-			EnemyExplosion* explosion = m_scene->AddEntity<EnemyExplosion>();
-			explosion->Create(m_transform.position);
+			Explosion* explosion = m_scene->AddEntity<Explosion>();
+			const ID& entity = GetTag();
+			explosion->Create(entity, m_transform.position);
 
 			SetState(Entity::DESTROY);
 		}
@@ -79,3 +92,95 @@ void Enemy::OnEvent(const Event & event)
 	}
 }
 
+
+// Enter State
+void EnterPathState::Enter()
+{
+	WaypointControllerComponent* waypointController = m_owner->GetEntity()->AddComponent<WaypointControllerComponent>();
+	waypointController->Create(m_owner->GetEntity<Enemy>()->m_info.speed, Enemy::m_enterPath);
+}
+
+void EnterPathState::Update()
+{
+	WaypointControllerComponent* waypointController = m_owner->GetEntity()->GetComponent<WaypointControllerComponent>();
+	if (waypointController && waypointController->IsComplete())
+	{
+		m_owner->GetEntity()->RemoveComponent(waypointController);
+		m_owner->SetState("enter_formation");
+	}
+}
+
+void EnterPathState::Exit()
+{
+
+}
+
+// Idles State
+void IdleState::Enter()
+{
+	_TransformControllerComponent* controller = m_owner->GetEntity()->AddComponent<_TransformControllerComponent>();
+	controller->Create(m_owner->GetEntity<Enemy>()->m_info.target, 180.0f, m_owner->GetEntity<Enemy>()->m_info.speed, 5.0f);
+
+	m_timer = Math::GetRandomRange(m_timeMin, m_timeMax);
+}
+void IdleState::Update()
+{
+	float dt = Timer::Instance()->DeltaTime();
+	m_timer = m_timer - dt;
+	if (m_timer <= 0.0f)
+	{
+		_TransformControllerComponent* controller = m_owner->GetEntity()->GetComponent<_TransformControllerComponent>();
+		m_owner->GetEntity()->RemoveComponent(controller);
+		m_owner->SetState("attack");
+	}
+}
+
+void IdleState::Exit()
+{
+	
+}
+
+// Attack State
+void AttackState::Enter()
+{
+	WaypointControllerComponent* waypointController = m_owner->GetEntity()->AddComponent<WaypointControllerComponent>();
+	waypointController->Create(m_owner->GetEntity<Enemy>()->m_info.speed, Enemy::m_enterPath);
+}
+
+void AttackState::Update()
+{
+	WaypointControllerComponent* waypointController = m_owner->GetEntity()->GetComponent<WaypointControllerComponent>();
+	if (waypointController && waypointController->IsComplete())
+	{
+		m_owner->GetEntity()->RemoveComponent(waypointController);
+		m_owner->SetState("enter_formation");
+	}
+}
+
+void AttackState::Exit()
+{
+	m_owner->GetEntity()->GetTransform().position.y = -64.0f;
+}
+
+// Formation State
+void EnterFormationState::Enter()
+{
+	WaypointControllerComponent* waypointController = m_owner->GetEntity()->AddComponent<WaypointControllerComponent>();
+	std::vector<Vector2D> target = { m_owner->GetEntity<Enemy>()->m_info.target };
+	waypointController->Create(m_owner->GetEntity<Enemy>()->m_info.speed, target);
+}
+
+void EnterFormationState::Update()
+{
+	WaypointControllerComponent* waypointController = m_owner->GetEntity()->GetComponent<WaypointControllerComponent>();
+	if (waypointController && waypointController->IsComplete())
+	{
+		m_owner->GetEntity()->RemoveComponent(waypointController);
+		m_owner->SetState("idle");
+	}
+}
+
+void EnterFormationState::Exit()
+{
+
+}

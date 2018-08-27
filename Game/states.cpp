@@ -44,22 +44,28 @@ void GameState::Enter()
 	ship->Create(Vector2D(400.0f, 500.0f));
 	m_owner->GetScene()->AddEntity(ship);
 
-
-	for (size_t i = 0; i < 5; i++)
+	std::vector<Enemy::Info> formation = 
 	{
-		// ENEMY
-		Enemy* enemy = new Enemy(m_owner->GetScene());
-		float x = Math::GetRandomRange(100.0f, 800.0f);
-		float y = Math::GetRandomRange(1.0f, 50.0f);
-		enemy->Create(Vector2D(x, y));
-		m_owner->GetScene()->AddEntity(enemy);
+		{ Enemy::eType::BEE, Enemy::eSide::LEFT, 300.0f, Vector2D(100.0f, 100.0f) },
+		{ Enemy::eType::BEE, Enemy::eSide::LEFT, 300.0f, Vector2D(140.0f, 100.0f) }, 
+		{ Enemy::eType::BOSS, Enemy::eSide::LEFT, 300.0f, Vector2D(180.0f, 100.0f) }, 
+		{ Enemy::eType::BEE, Enemy::eSide::RIGHT, 300.0f, Vector2D(700.0f, 100.0f) },
+		{ Enemy::eType::BOSS, Enemy::eSide::RIGHT, 300.0f, Vector2D(600.0f, 100.0f) }
+	};
+
+	for (Enemy::Info info : formation)
+	{
+		Enemy* enemy = m_owner->GetScene()->AddEntity<Enemy>();
+		enemy->Create(info);
 	}
 }
 
 void GameState::Update()
 {
+
 }
 
 void GameState::Exit()
 {
+
 }

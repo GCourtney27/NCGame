@@ -78,11 +78,11 @@
       <ConformanceMode>true</ConformanceMode>
       <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
       <PreprocessorDefinitions>ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(ProjectDir)..\Game</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -91,12 +91,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(ProjectDir)..\Game</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;SDL_image.lib;fmod64_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod64_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -109,13 +109,13 @@
       <ConformanceMode>true</ConformanceMode>
       <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
       <PreprocessorDefinitions>ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(ProjectDir)..\Game</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x86;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -126,14 +126,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\include;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(ProjectDir)..\Game</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;SDL_image.lib;fmod64_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Middleware\SDL2-2.0.8\lib\x64;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\lib;$(ProjectDir)..\..\Middleware\fmod\api\lowlevel\inc;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sdl2.lib;sdl2main.lib;SDL2_ttf.lib;SDL2_image.lib;fmod64_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -166,8 +166,10 @@
     <ClInclude Include="textComponent.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="transform.h" />
+    <ClInclude Include="transformControllerComponent.h" />
     <ClInclude Include="varient.h" />
     <ClInclude Include="waypoint.h" />
+    <ClInclude Include="waypointControllerComponent.h" />
     <ClInclude Include="_math.h" />
     <ClInclude Include="matrix22.h" />
     <ClInclude Include="matrix33.h" />
@@ -205,7 +207,9 @@
     <ClCompile Include="textComponent.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="transform.cpp" />
+    <ClCompile Include="transformControllerComponent.cpp" />
     <ClCompile Include="waypoint.cpp" />
+    <ClCompile Include="waypointControllerComponent.cpp" />
     <ClCompile Include="_math.cpp" />
     <ClCompile Include="matrix22.cpp" />
     <ClCompile Include="matrix33.cpp" />

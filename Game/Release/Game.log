@@ -1,9 +1,16 @@
 ﻿  enemy.cpp
-  enemyWaypointControllerComponent.cpp
-c:\users\garrett\source\repos\ncgame\game\enemywaypointcontrollercomponent.cpp(75): warning C4506: no definition for inline function 'float Vector2D::GetAngle(const Vector2D &)'
+  enemyControllerComponent.cpp
+  explosion.cpp
+  enemyFlightAnimation.cpp
+  formation.cpp
+  game.cpp
+  main.cpp
+  missile.cpp
+  playerExplosion.cpp
+  ship.cpp
+  shipControllerComponent.cpp
+  states.cpp
   Generating code
-  8 of 453 functions ( 1.8%) were compiled, the rest were copied from previous compilation.
-    2 functions were new in current compilation
-    15 functions had inline decision re-evaluated but remain unchanged
+  All 490 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   Game.vcxproj -> C:\Users\Garrett\source\repos\NCGame\Release\Game.exe

@@ -6,6 +6,7 @@
 #include "renderer.h"
 #include "animationComponent.h"
 #include "playerExplosion.h"
+#include "explosion.h"
 
 void Ship::Create(const Vector2D & position)
 {
@@ -43,16 +44,18 @@ void Ship::OnEvent(const Event & event)
 	{
 		if (event.sender->GetTag() == "enemy")
 		{
-			PlayerExplosion* explosion = m_scene->AddEntity<PlayerExplosion>();
-			explosion->Create(m_transform.position);
+			Explosion* explosion = m_scene->AddEntity<Explosion>();
+			const ID& entity = GetTag();
+			explosion->Create(entity, m_transform.position);
 
 			SetState(Entity::DESTROY);
 		}
 
 		if (event.sender->GetTag() == "enemymissile")
 		{
-			PlayerExplosion* explosion = m_scene->AddEntity<PlayerExplosion>();
-			explosion->Create(m_transform.position);
+			Explosion* explosion = m_scene->AddEntity<Explosion>();
+			const ID& entity = GetTag();
+			explosion->Create(entity, m_transform.position);
 
 			SetState(Entity::DESTROY);
 		}

@@ -25,14 +25,14 @@
     <Filter Include="Components">
       <UniqueIdentifier>{beaf4ad2-9108-48ba-9b66-c589465db4dd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Physics">
-      <UniqueIdentifier>{7c5e97b3-95d7-4795-9ebb-c173d5612f6a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Event">
       <UniqueIdentifier>{08b8293e-2e7e-4075-8bcc-f2ac0855b9cb}</UniqueIdentifier>
     </Filter>
     <Filter Include="Framework">
       <UniqueIdentifier>{ce62f024-bd9e-471a-89a4-236f37aba679}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{7c5e97b3-95d7-4795-9ebb-c173d5612f6a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -65,12 +65,6 @@
     </ClInclude>
     <ClInclude Include="renderer.h">
       <Filter>Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="textureManager.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="textManager.h">
-      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="text.h">
       <Filter>Graphics</Filter>
@@ -162,6 +156,18 @@
     <ClInclude Include="debugDraw.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="waypointControllerComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="transformControllerComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="textManager.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="textureManager.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
@@ -193,12 +199,6 @@
     </ClCompile>
     <ClCompile Include="timer.cpp">
       <Filter>Systems</Filter>
-    </ClCompile>
-    <ClCompile Include="textureManager.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="textManager.cpp">
-      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="text.cpp">
       <Filter>Graphics</Filter>
@@ -267,6 +267,18 @@
       <Filter>Objects</Filter>
     </ClCompile>
     <ClCompile Include="debugDraw.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="waypointControllerComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="transformControllerComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="textManager.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="textureManager.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
   </ItemGroup>

@@ -48,9 +48,6 @@ bool Game::Initialize()
 	textComponent->SetDepth(100);
 	m_scene->AddEntity(entity);
 
-
-	
-
 	m_running = success;
 
 	return success;

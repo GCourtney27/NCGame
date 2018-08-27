@@ -29,7 +29,7 @@ bool Engine::Initialize()
 
 	Physics::Instance()->SetGravity(Vector2D(0.0f, 400.0f));
 
-	m_isDebug = false;
+	m_isDebug = true;
 
 	return true;
 }

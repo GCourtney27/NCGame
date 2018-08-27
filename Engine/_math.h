@@ -20,6 +20,7 @@ namespace  Math
 		ENGINE_API float GetRandom01();
 		ENGINE_API float GetRandomRange(float min, float max);
 		ENGINE_API float Lerp(float v1, float v2, float t);
+		ENGINE_API float LerpDegrees(float v1, float v2, float t);
 		ENGINE_API float LerpUnclamped(float v1, float v2, float t);
 		ENGINE_API bool IsZero(float value);
 #ifdef __cplusplus

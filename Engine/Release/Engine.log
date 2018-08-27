@@ -1,9 +1,43 @@
-﻿  aabbComponent.cpp
+﻿  aabb.cpp
+  aabbComponent.cpp
+  animationComponent.cpp
+  audioSystem.cpp
+  color.cpp
+  component.cpp
+  controllerComponent.cpp
   debugDraw.cpp
+  engine.cpp
+  entity.cpp
+  eventManager.cpp
+  fileSystem.cpp
+  id.cpp
+  inputManager.cpp
+  kinematicComponent.cpp
+  object.cpp
+  physics.cpp
+  scene.cpp
+  spriteComponent.cpp
+  state.cpp
+  Compiling...
+  stateMachine.cpp
+  textComponent.cpp
+  texture.cpp
+  transform.cpp
+  transformControllerComponent.cpp
+  waypoint.cpp
+  waypointControllerComponent.cpp
+  _math.cpp
+  matrix22.cpp
+  matrix33.cpp
+  renderer.cpp
+  text.cpp
+  textManager.cpp
+  textureManager.cpp
+  timer.cpp
+  vector2D.cpp
+  vector3D.cpp
      Creating library C:\Users\Garrett\source\repos\NCGame\Release\Engine.lib and object C:\Users\Garrett\source\repos\NCGame\Release\Engine.exp
   Generating code
-  26 of 1981 functions ( 1.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    16 functions had inline decision re-evaluated but remain unchanged
+  All 2109 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   Engine.vcxproj -> C:\Users\Garrett\source\repos\NCGame\Release\Engine.dll

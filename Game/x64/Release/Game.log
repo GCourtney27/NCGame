@@ -1,0 +1,14 @@
+﻿  enemy.cpp
+  enemyControllerComponent.cpp
+  explosion.cpp
+  formation.cpp
+  game.cpp
+  playerExplosion.cpp
+  ship.cpp
+  states.cpp
+  Generating code
+  54 of 489 functions (11.0%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    100 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Game.vcxproj -> C:\Users\Garrett\source\repos\NCGame\x64\Release\Game.exe
