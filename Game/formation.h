@@ -24,7 +24,7 @@ public:
 	Formation(Scene* scene, const ID& id) : Entity(scene, id) {}
 	virtual ~Formation() {}
 
-	void Create();
+	void Create(ID& type);
 	void Update();
 	void Destroy();
 

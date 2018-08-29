@@ -1,10 +1,2 @@
-﻿  enemy.cpp
-  enemyControllerComponent.cpp
-  explosion.cpp
-  formation.cpp
-  game.cpp
-  playerExplosion.cpp
-  ship.cpp
-  states.cpp
-  Generating Code...
+﻿  states.cpp
   Game.vcxproj -> C:\Users\Garrett\source\repos\NCGame\Debug\Game.exe

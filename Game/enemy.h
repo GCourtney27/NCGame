@@ -11,6 +11,7 @@ public:
 	enum eType
 	{
 		BEE,
+		BUG,
 		BOSS,
 
 	};
@@ -39,8 +40,6 @@ public:
 	void Update();
 
 	void OnEvent(const Event& event);
-
-	static std::vector<Vector2D> m_enterPath;
 
 	Info m_info;
 

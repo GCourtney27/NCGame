@@ -140,12 +140,10 @@
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="enemyControllerComponent.cpp" />
     <ClCompile Include="explosion.cpp" />
-    <ClCompile Include="enemyFlightAnimation.cpp" />
     <ClCompile Include="formation.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="missile.cpp" />
-    <ClCompile Include="playerExplosion.cpp" />
     <ClCompile Include="ship.cpp" />
     <ClCompile Include="shipControllerComponent.cpp" />
     <ClCompile Include="states.cpp" />
@@ -159,11 +157,9 @@
     <ClInclude Include="enemy.h" />
     <ClInclude Include="enemyControllerComponent.h" />
     <ClInclude Include="explosion.h" />
-    <ClInclude Include="enemyFlightAnimation.h" />
     <ClInclude Include="formation.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="missile.h" />
-    <ClInclude Include="playerExplosion.h" />
     <ClInclude Include="ship.h" />
     <ClInclude Include="shipControllerComponent.h" />
     <ClInclude Include="states.h" />

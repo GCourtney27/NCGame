@@ -16,7 +16,8 @@ public:
 	{
 		INACTIVE,
 		ACTIVE,
-		DESTROY
+		DESTROY,
+		RESPAWN
 	};
 
 public:

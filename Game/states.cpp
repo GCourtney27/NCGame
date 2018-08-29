@@ -5,7 +5,10 @@
 #include "inputManager.h"
 #include "enemy.h"
 #include "ship.h"
+#include "formation.h"
+#include "timer.h"
 
+// Title State
 void TitleState::Enter()
 {
 	Entity* entity = m_owner->GetScene()->AddEntity<Entity>("title");
@@ -18,15 +21,13 @@ void TitleState::Enter()
 
 	m_credits = 0;
 }
-
 void TitleState::Update()
 {
 	if (InputManager::Instance()->GetActionButton("start") == InputManager::eButtonState::PRESSED)
 	{
-		m_owner->SetState("game");
+		m_owner->SetState("enter_stage");
 	}
 }
-
 void TitleState::Exit()
 {
 	Entity* entity = m_owner->GetScene()->GetEntityWithID("title");
@@ -36,36 +37,43 @@ void TitleState::Exit()
 	}
 }
 
+// Game State
 void GameState::Enter()
 {
 
+}
+void GameState::Update()
+{
+
+}
+void GameState::Exit()
+{
+
+}
+
+// Enter Stage State
+void EnterStageState::Enter()
+{
 	// SHIP
 	Ship* ship = new Ship(m_owner->GetScene(), "player");
 	ship->Create(Vector2D(400.0f, 500.0f));
 	m_owner->GetScene()->AddEntity(ship);
 
-	std::vector<Enemy::Info> formation = 
+	Timer::Instance()->Reset();
+	Formation* formation =dynamic_cast<Formation*> (m_owner->GetScene()->GetEntityWithID("formation"));
+	if (formation == nullptr)
 	{
-		{ Enemy::eType::BEE, Enemy::eSide::LEFT, 300.0f, Vector2D(100.0f, 100.0f) },
-		{ Enemy::eType::BEE, Enemy::eSide::LEFT, 300.0f, Vector2D(140.0f, 100.0f) }, 
-		{ Enemy::eType::BOSS, Enemy::eSide::LEFT, 300.0f, Vector2D(180.0f, 100.0f) }, 
-		{ Enemy::eType::BEE, Enemy::eSide::RIGHT, 300.0f, Vector2D(700.0f, 100.0f) },
-		{ Enemy::eType::BOSS, Enemy::eSide::RIGHT, 300.0f, Vector2D(600.0f, 100.0f) }
-	};
-
-	for (Enemy::Info info : formation)
-	{
-		Enemy* enemy = m_owner->GetScene()->AddEntity<Enemy>();
-		enemy->Create(info);
+		formation = m_owner->GetScene()->AddEntity<Formation>("formation");
+		ID* id = new ID("middle_phase");
+		formation->Create(*id);
 	}
 }
-
-void GameState::Update()
+void EnterStageState::Update()
 {
-
+	Formation* formation = dynamic_cast<Formation*> (m_owner->GetScene()->GetEntityWithID("formation"));
+	formation->Update();
 }
-
-void GameState::Exit()
+void EnterStageState::Exit()
 {
 
 }

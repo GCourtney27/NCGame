@@ -13,7 +13,7 @@ class ENGINE_API WaypointControllerComponent : public IControllerComponent
 public:
 	WaypointControllerComponent(Entity* owner) : IControllerComponent(owner) {}
 
-	void Create(float speed, std::vector<Vector2D>& points);
+	void Create(const std::vector<Vector2D>& points, float speed, float turnRate, bool setPositionAtStart);
 	void Destroy();
 	void Update();
 
@@ -25,6 +25,7 @@ public:
 protected:
 	bool m_isComplete = false;
 	float m_speed = 0.0f;
+	float m_turnRate = 0.0f;
 
 	float m_timer = 0.0f;
 	float m_fireRate = 1.0f;

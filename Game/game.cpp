@@ -37,6 +37,7 @@ bool Game::Initialize()
 	m_stateMachine = new StateMachine(m_scene);
 
 	m_stateMachine->AddState("title", new TitleState(m_stateMachine));
+	m_stateMachine->AddState("enter_stage", new EnterStageState(m_stateMachine));
 	m_stateMachine->AddState("game", new GameState(m_stateMachine));
 
 	m_stateMachine->SetState("title");

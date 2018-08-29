@@ -12,4 +12,8 @@ public:
 	void Update();
 
 	void OnEvent(const Event& event);
+
+protected:
+	float m_lives = 3.0f;
+	Vector2D m_lifePosition = Vector2D(100.0f, 550.0f);
 };

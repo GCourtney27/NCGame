@@ -1,5 +1,13 @@
-﻿  texture.cpp
-  textureManager.cpp
+﻿  aabbComponent.cpp
+  animationComponent.cpp
+  entity.cpp
+  eventManager.cpp
+  kinematicComponent.cpp
+  scene.cpp
+  spriteComponent.cpp
+  textComponent.cpp
   transformControllerComponent.cpp
+  waypoint.cpp
+  waypointControllerComponent.cpp
   Generating Code...
   Engine.vcxproj -> C:\Users\Garrett\source\repos\NCGame\Debug\Engine.dll

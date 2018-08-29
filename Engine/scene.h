@@ -5,6 +5,7 @@
 #include <list>
 #include <assert.h>
 
+class Enemy;
 class Entity;
 
 class ENGINE_API Scene

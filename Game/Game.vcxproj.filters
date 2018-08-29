@@ -34,12 +34,6 @@
     <ClCompile Include="enemyControllerComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
-    <ClCompile Include="playerExplosion.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="enemyFlightAnimation.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
     <ClCompile Include="states.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -68,12 +62,6 @@
     </ClInclude>
     <ClInclude Include="enemyControllerComponent.h">
       <Filter>Components</Filter>
-    </ClInclude>
-    <ClInclude Include="playerExplosion.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="enemyFlightAnimation.h">
-      <Filter>Objects</Filter>
     </ClInclude>
     <ClInclude Include="states.h">
       <Filter>Source Files</Filter>
